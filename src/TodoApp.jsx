@@ -1,4 +1,4 @@
-import { useGetTodosQuery } from './store/apis';
+import { useGetTodosQuery } from './store/apis/todosApi';
 
 export const TodoApp = () => {
   const algo = useGetTodosQuery();
