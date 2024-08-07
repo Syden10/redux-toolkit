@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const todosApi = createApi({
   reducerPath: 'todos',
@@ -9,7 +9,10 @@ export const todosApi = createApi({
     getTodos: builder.query({
       query: () => '/todos',
     }),
+    getTodo: builder.query({
+      query: (todoId) => `/todos/${todoId}`,
+    }),
   }),
 });
 
-export const { useGetTodosQuery } = todosApi;
+export const { useGetTodosQuery, useGetTodoQuery } = todosApi;
